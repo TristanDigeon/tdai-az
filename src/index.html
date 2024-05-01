@@ -17,9 +17,19 @@
 
        <img src="images/the-thing.png" alt="">
 
-        <p>test syncho 2</p>
+        <!-- <p>test syncho 2</p> -->
+        <p>test appel API: <b id="name">JoJo</b></p>
 
     </div>
+
+    <script>      
+
+      (async function() {
+          const { text } = await( await fetch(`/api/message`)).json();
+          document.querySelector('#name').textContent = text;
+      }());
+
+    </script>
 
   </main>
 </body>
